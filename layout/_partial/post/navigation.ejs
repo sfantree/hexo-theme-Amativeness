@@ -1,0 +1,13 @@
+<nav class="pagination" id="comments-nav" role="pagination">
+    <% if (page.prev) { %>
+    <a class="prev page-numbers" href="<%- url_for(page.prev.path) %>">
+        ← <%- page.prev.title %>
+    </a>
+    <% } %>
+    <span class="page-number">•</span>
+    <% if (page.next) { %>
+    <a class="next page-numbers" href="<%- url_for(page.next.path) %>">
+        <%- page.next.title %> →
+    </a>
+    <% } %>
+</nav>

@@ -1,0 +1,93 @@
+<script src="https://www.anotherhome.net/wp-content/themes/Amativeness/lib/typed.js/dist/typed.min.js"></script>
+<script src="https://raw.githubusercontent.com/DIYgod/Amativeness/master/src/js/main.js"></script>
+<script>
+
+$("#evanyou").css("width","0px");
+$(".pagination").css("position","relative");
+$(".pagination").css("top","-1em");
+$(".pagination").css("line-height","0");
+
+function t() {
+            window.setTimeout(function() {
+                t()
+            },
+            1e3);
+            var a = new Date("12/30/2015 23:30:00"),
+            n = new Date,
+            r = n.getTime() - a.getTime(),
+            o = 864e5,
+            l = r / o,
+            s = Math.floor(l),
+            i = 24 * (l - s),
+            d = Math.floor(i),
+            p = 60 * (i - d),
+            m = Math.floor(60 * (i - d)),
+            c = Math.floor(60 * (p - m));
+            $("#span_dt_dt").html(s + "天" + d + "小时" + m + "分" + c + "秒")
+        };
+t();
+</script>
+<script>
+$(document).ready(function(){
+$(".typed a").typed({
+            strings: ["你见，或者不见我","我就在那里","不悲不喜","你念，或者不念我","情就在那里","不来不去","你爱或者不爱我","爱就在那里","不增不减","你跟，或者不跟我","我的手就在你的手里","不舍不弃","来我怀里","或者","让我住进你的心里","默然 相爱","寂静 喜欢"],
+            typeSpeed: 100,
+            backSpeed: 40,
+            backDelay: 1000
+        });
+});
+</script>
+<script>
+$.scrollto = function (scrolldom, scrolltime) {
+        $(scrolldom).click(function () {
+            var scrolltodom = $(this).attr("data-scroll");
+            $(this).addClass("active").siblings().removeClass("active");
+            $('html, body').animate({
+                scrollTop: $(scrolltodom).offset().top
+            }, scrolltime);
+            return false;
+        });
+    };
+    // 判断位置控制 返回顶部的显隐
+    if ($(window).width() > 800) {
+        var backTo = $("#back-to-top");
+        var backHeight = $(window).height() - 980 + 'px';
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 700 && backTo.css('top') === '-900px') {
+                backTo.css('top', backHeight);
+            }
+            else if ($(window).scrollTop() <= 700 && backTo.css('top') !== '-900px') {
+                backTo.css('top', '-900px');
+            }
+        });
+    }
+    // 启用
+    $.scrollto("#back-to-top", 800);
+
+    // Ctrl + Enter 提交回复
+    $('#comment-content').keydown(function (event) {
+        if (event.ctrlKey && event.keyCode == 13) {
+            $('#submit').click();
+            return false;
+        }
+    });
+
+var $sidebar = $("#text-11"),
+        $last = $("#secondary"),
+        $window = $(window),
+        offset = $last.offset().top + $last.height();
+    $window.scroll(function () {
+        if ($window.scrollTop() > offset) {
+            $sidebar.css({"position": "fixed", "top": "40px", "width": "22%", "animation": "fade-in 0.5s"});
+        } else {
+            $sidebar.css({"position": "relative", "top": "0", "width": "initial", "animation": "initial"});
+        }
+    });
+
+
+
+
+</script>
+
+
+

@@ -1,0 +1,56 @@
+
+<% permalink = config.url + config.root + post.path %>
+<div class="main article-list" id="thumbs">
+  <article class="block post">
+<span class="round-date red">
+<span class="month"><%= date(post.date, "M") %>月</span>
+<span class="day"><%= date(post.date, "d") %></span>
+</span>
+          
+
+<header class="entry-header">
+      <p class="title" itemprop="name headline">
+      <a href="<%- config.root %><%- post.path %>" rel="bookmark" itemprop="url"><%- post.title %></a>
+      </p>
+<div class="article-meta">
+<i class="fa fa-heart-o"></i>发表于 <time itemprop="datePublished" datetime="<%= date(post.date, "ll") %>"><%= date(post.date,"ll") %></time>
+ • 
+<div style="display:inline;">
+<i class="fa fa-tags"></i>
+<% if (post.tags && post.tags.length){ %>
+    <%- list_tags(post.tags, {
+        show_count: false,
+        class: 'article-tag',
+	style: 'span',
+	separator: ' ',
+      }) %>
+<% } %>
+
+</div>
+
+
+</div>
+      <div class="ui ribbon label red"><a href="<%= config.root %>" rel="category tag">
+<% if (post.categories && post.categories.length){ %>
+    <%- list_categories(post.categories, {
+      show_count: false,
+      class: 'article-category',
+        style: 'list'
+    }) %>
+<% }else{ %>
+
+未分类
+<% } %>
+
+
+</a></div>
+      </header>
+    
+    <div class="article-content red" itemprop="articleBody">
+      <%- post.content %>
+    </div>
+    
+  </article>
+  <%- partial('post/navigation') %>
+  <%- partial('post/comments') %>
+</div>

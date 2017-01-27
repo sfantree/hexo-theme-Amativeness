@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<%- partial('_partial/head') %>
+
+
+<% if (typeof page.title == 'undefined') { %>
+<body class="home-template">
+<% } else { %>
+<body class="post-template">
+<% } %>
+<div class="container" id="content">
+  <%- body %>
+
+  <%- partial('_partial/secondary') %>
+</div>
+</div>
+  
+  <%- partial('_partial/footer') %>
+  <%- partial('_partial/after_all') %>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+
+
+
+<%
+  var title = page.title;
+
+  if (is_archive()){
+    title = 'Archives';
+
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = 'Category: ' + page.category;
+  } else if (is_tag()){
+    title = 'Tag: ' + page.tag;
+  }
+%>
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	    <meta name="theme-color" content="#595C5E">
+	    <meta name="generator" content="<%- config.title %>">
+
+
+<% for (hosts in theme.predns) { %>
+<link rel='dns-prefetch' href='//<%= theme.predns[hosts] %>'/><% } %>
+
+<title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+	    <link rel="canonical" href="<%- config.url %>">
+
+	      <% if (config.rss) { %>
+	  <link rel="alternate" type="application/rss+xml" title="RSS" href="<%- config.rss %>">
+	  <% } %>
+	  <% if (config.feed && config.feed.type == 'atom') { %>
+	  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<%- config.feed.path %>">
+	  <% } %>
+	  <% if (config.feed && config.feed.type == 'rss') { %>
+	    <link rel="alternate" type="application/rss+xml" title="RSS" href="<%- config.feed.path %>">
+	  <% } %>
+
+	    
+<link rel="apple-touch-icon" href="<%= theme.img.head4 %>">
+<link rel="shortcut icon" href="<%= theme.img.favicon %>">
+
+<link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+	    
+		
+
+	    <meta name="description" content="<%- config.subtitle %>" />
+
+
+  <%
+    var keyWords = config.keywords;
+    if(page.tags){
+      keyWords = [];
+      _.isArray(page.tags) ? ( keyWords = page.tags )
+        : page.tags.each(function(k){
+            keyWords.push(k.name);
+          });
+   }
+  %>
+  <meta name="keywords" content="<%= keyWords %>">
+
+	    <link rel="canonical" href="<%- config.root %>" />
+	    <!-- /all in one seo pack -->
+
+	    <link rel="stylesheet" type="text/css" href="<%- config.root %>css/main.css" />
+	    <script src="//cdn.bootcss.com/jquery/1.8.2/jquery.min.js"></script>
+	    </head>
+
+	<body class="home blog single-author">
+	    <script>
+		NProgress.configure({
+		    showSpinner: false,
+		    easing: 'ease-out',
+		    speed: 1000
+		});
+		NProgress.set(0.7);
+	    </script>
+	    <canvas id="evanyou"></canvas>
+	    <div id="back-to-top" class="red" data-scroll="body">
+	    </div>
+
+
+
+
+<div class="navbar">
+<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
+<div>
+<ul class="nav-menu">
+
+<%
+          var menuItem, isActive = function(item) {
+              var pageUrl = url_for(page.path);
+              return item.url === '/' ? pageUrl === url_for(item.url + 'index.html') : _.startsWith(pageUrl, url_for(item.url));
+          };
+          for (var i in theme.menu) {
+            menuItem = theme.menu[i];
+%>
+
+
+<li class="menu-item menu-item-type-post_type menu-item-object-page"><a <% if(menuItem.target){ %>target="_blank"<% } %>  href="<%- url_for(menuItem.url) %>"><i class="fa fa-<%= i %>"></i><%=(menuItem.text || _.startCase(i)) %></a></li>
+
+<% } %>
+</ul>
+</div>
+</nav>
+
+
+
+
+
+
+
+					    <div class="nav-right">
+			<form class="search-form" method="post" action="https://www.sfantree.com">
+			    <input type="text" name="s" class="search-input" placeholder="站内搜索">
+			    <button type="submit" class="search-submit sousuo">
+				<i class="fa fa-search"></i>
+			    </button>
+			</form>
+</div>
+			<div class="container">
+		    </div>
+		</div>
+	    </div>
+
+	    <header class="header-description">
+		<div id="site-header">
+		    <h1><a href="<%- config.root %>"
+			   title=<%= config.title %>
+			   rel="home"><%= config.title %></a></h1>
+		    <p class="typed"><a href="<%- config.root %>" title="<%= config.title %>" rel="home"></a></p>
+		</div>
+	    </header>
+	    <div id="information" class="info block">
+	    <a href="<%- config.root %>"><img src="<%= theme.img.avatar %>" class="avatar"
+                                                             data-pinit="registered"
+                                                             width="356"
+                                                             height="356"
+                                                             alt=""/></a>
+
+        <h2 class="description"><a href="<%- config.root %>"
+                                   title="<%= config.title %>" rel="home"><span
+                    style="color: #3369e8;">Write</span> <span style="color: #d50f25;">the</span> <span
+                    style="color: #eeb211;">Code.</span> <span style="color: #3369e8;">Change</span> <span
+                    style="color: #009925;">the</span> <span style="color: #d50f25;">World.</span></a></h2>
+    </div>
+    <div class="xm">
+    <img src="<%= theme.img.xm %>">
+    </div>
+
+
+

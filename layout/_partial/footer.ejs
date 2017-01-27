@@ -1,0 +1,31 @@
+<footer id="colophon" role="contentinfo" itemscope="" itemtype="https://schema.org/WPFooter">
+        <div class="footer-image" style="background: url(<%= theme.img.footerimg %>) no-repeat 50%;"></div>
+        <div class="container">
+            <p>博客已萌萌哒运行<span id=span_dt_dt></span><span class="my-face">(●'◡'●)ﾉ♥</span></p>
+            <p>
+                托管于<a href="https://www.qcloud.com/" target="_blank" class="external" rel="nofollow"> 企鹅云</a>.
+                <a href="https://coding.net/" target="_blank" class="external" rel="nofollow">Coding</a> 提供静态文件云存储服务.
+                <a href="http://web.umeng.com/" target="_blank" class="external" rel="nofollow">CNZZ </a>提供网站统计服务.
+                <a href="http://www.cloudxns.net/" target="_blank" class="external" rel="nofollow">CloudXNS </a>提供 DNS 解析服务.
+            </p>
+            <p>&copy; 2016 <a href="<%- config.root %>"><%- config.title %></a>.
+                由 <a href="https://hexo.io" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+                Modified from <a href="https://github.com/DIYgod/Amativeness" target="_blank" class="external" rel="nofollow">Amativeness</a>.
+                
+                
+                <% if (config.rss || config.feed) {  %>
+                <a href="<%= (config.rss || config.feed.path) %>" target="_blank">站点地图</a>.
+                <% } %>
+                鄂ICP备16001124号.
+            </p>
+            <p>Love <i class="fa fa-heart throb" style="color: #d43f57;"></i> blog since 2016. </p>
+        </div>
+<script>
+        NProgress.set(1.0);
+    </script>
+
+<div style="display:none;"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257378141'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257378141' type='text/javascript'%3E%3C/script%3E"));</script></div>
+
+
+    </footer>
+

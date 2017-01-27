@@ -1,0 +1,81 @@
+<div class="main article-list" id="thumbs">
+  <% page.posts.each(function(post) { %>
+  <article class="block post">
+
+    
+      <%- partial('post/meta', {post: post}) %>
+      <header class="entry-header">
+      <p class="title" itemprop="name headline">
+      <a href="<%- config.root %><%- post.path %>" rel="bookmark" itemprop="url"><%- post.title %></a>
+      </p>
+     
+<div class="article-meta">
+
+<i class="fa fa-heart-o"></i>发表于 <time itemprop="datePublished" datetime="<%= date(post.date,"ll") %>"><%= date(post.date,"ll") %></time> • 
+
+<div style="display:inline;">
+<i class="fa fa-tags"></i>
+<% if (post.tags && post.tags.length){ %>
+    <%- list_tags(post.tags, {
+        show_count: false,
+        class: 'article-tag',
+	style: 'span',
+	separator: ' ',
+      }) %>
+<% } %>
+
+</div>
+
+</div>
+      <div class="ui ribbon label red"><a href="<%= config.root%>" rel="category tag">
+
+
+<% if (post.categories && post.categories.length){ %>
+    <%- list_categories(post.categories, {
+      show_count: false,
+      class: 'article-category',
+        style: 'list'
+    }) %>
+<% }else{ %>
+
+未分类
+<% } %>
+
+
+</a></div>
+
+
+
+
+      </header>
+
+
+
+
+
+
+
+    <div class="article-content red" itemprop="articleBody">
+      <p>
+      <% if (post.excerpt){ %>
+        <%- post.excerpt %>
+      <% } else { %>
+        <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 220) %>
+      <% } %>
+      </p>
+      <% if (theme.excerpt_link) { %>
+  <br>    <div class="article-content red">
+        <p class="more"><a href="<%- config.root %><%- post.path %>" title="<%- post.title %>" target="_blank"><%= theme.excerpt_link %>
+                <br></a></p>
+    </div>
+      <% } %>
+    </div>
+  </article>
+  <% }); %>
+  <nav class="pagination" role="pagination">
+    <% if (page.prev) { %><a class="newer-posts" href="<%- url_for(page.prev_link) %>">← Newer Posts</a><% } %>
+    <span class="page-number">Page <%- page.current %> of <%- page.total %></span>
+    <% if (page.next) { %><a class="older-posts" href="<%- url_for(page.next_link) %>">Older Posts →</a><% } %>
+  </nav>
+</div>
+
