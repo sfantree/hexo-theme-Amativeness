@@ -1,9 +1,13 @@
 #hexo-theme-Amativeness
 
-Amativeness移植到HEXO [demo](https://www.sfantree.com)
+Amativeness移植到HEXO 
+
+![](https://coding.net/u/sfantree/p/blogimage/git/raw/master/post/wptheme2hexo/20170123083828.png)
+
+[info](https://www.sfantree.com/Amativeness2hexo/)
 
 
-[镜像地址]()
+[Coding镜像地址](https://coding.net/u/sfantree/p/hexo-theme-Amativeness/git/tree/master)
 
 [主题源地址](http://azfashao.com/amativeness3-0/)
 [DIYgod修改版本](https://github.com/DIYgod/Amativeness)
