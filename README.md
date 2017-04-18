@@ -2,10 +2,14 @@
 
 Amativeness移植到HEXO 
 
-PC
+#### demo
+
+##### PC
+
 ![](https://ooo.0o0.ooo/2017/04/18/58f61c0903a07.png)
 
-移动端
+##### 移动端 
+
 ![](https://ooo.0o0.ooo/2017/04/18/58f61b6373d8c.png)
 
 [info](https://www.sfantree.com/Amativeness2hexo/)
