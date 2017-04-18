@@ -2,7 +2,7 @@
 
 Amativeness移植到HEXO 
 
-![](https://coding.net/u/sfantree/p/blogimage/git/raw/master/post/wptheme2hexo/20170123083828.png)
+![](https://ooo.0o0.ooo/2017/04/18/58f619a1ca49a.png)
 
 [info](https://www.sfantree.com/Amativeness2hexo/)
 
